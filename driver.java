@@ -78,8 +78,8 @@ public class driver{
 
     System.out.print("Numerator of Rational Number a (should print 1): ");
     System.out.println(a.getNumerator());
-    System.out.print("Denominator of Rational Number a (should print 1): ");
-    //System.out.println(a.getDenominator());
+    System.out.print("Denominator of Rational Number a (should print 2): ");
+    System.out.println(a.getDenominator());
     System.out.println("----------");
 
     // RationalNumber opeations

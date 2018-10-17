@@ -74,6 +74,10 @@ public class RationalNumber extends RealNumber {
 
 
   public String toString() {
+    if ( !(numerator < 0 && denominator < 0) && (numerator < 0 || denominator < 0  ))
+    return "-"+numerator + "/" + denominator;
+    if (numerator < 0 && denominator < 0)
+    return "" + -1 * numerator + -1 * denominator;
     if( numerator == 0)
     return "" +0;
     if ( denominator == 1)
