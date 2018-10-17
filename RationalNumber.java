@@ -21,26 +21,30 @@ public class RationalNumber extends RealNumber {
   }
 
 
-  public static int gcd(int a, int b) {
-       while (b != 0) {
-           int temp = b;
-           b = a % b;
-           a = temp;
+  public static int gcd(int p, int q) {
+       while (q != 0) {
+           int temp = q;
+           q = p % q;
+           p = temp;
        }
-       return a;
+       return p;
    }
 
    public double getValue(){
-    return numerator / denominator;
+    return denominator / numerator;
   }
 
    private void reduce(){
-     if ( this.numerator < this.denominator)
-     this.reciprocal();
+     int num = this.numerator;
+     int den = this.denominator;
+     if ( num < den){
+       num = this.denominator;
+       den = this.numerator;
+     }
 
-     int divider = gcd( this.numerator, this.denominator);
-     this.numerator = this.numerator / divider;
-     this.denominator = this.denominator / divider;
+     int divider = gcd( num , den);
+     this.numerator = num / divider;
+     this.denominator = den / divider;
 }
 
   public int getNumerator(){
