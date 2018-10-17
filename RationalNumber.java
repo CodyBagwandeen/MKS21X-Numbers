@@ -31,16 +31,12 @@ public class RationalNumber extends RealNumber {
    }
 
    public double getValue(){
-    return denominator / numerator;
+    return numerator / (double)denominator;
   }
 
    private void reduce(){
      int num = this.numerator;
      int den = this.denominator;
-     if ( num < den){
-       num = this.denominator;
-       den = this.numerator;
-     }
 
      int divider = gcd( num , den);
      this.numerator = num / divider;
@@ -51,7 +47,7 @@ public class RationalNumber extends RealNumber {
     return this.numerator;
   }
 
-  public int getDenomintaor(){
+  public int getDenominator(){
     return this.denominator;
   }
 
@@ -78,6 +74,10 @@ public class RationalNumber extends RealNumber {
 
 
   public String toString() {
+    if( numerator == 0)
+    return "" +0;
+    if ( denominator == 1)
+    return ""+numerator;
     return this.numerator + "/" + this.denominator;
   }
 
@@ -85,7 +85,6 @@ public class RationalNumber extends RealNumber {
     RationalNumber new1 = new RationalNumber( ( this.numerator * other.denominator), (this.denominator * other.numerator));
     RationalNumber new2 = new RationalNumber( ( this.numerator * other.denominator), (this.denominator * other.numerator));
     RationalNumber sum = new RationalNumber( (new1.numerator + new2.numerator), new1.denominator);
-    sum.reduce();
     return sum;
   }
 
@@ -93,7 +92,6 @@ public class RationalNumber extends RealNumber {
     RationalNumber new1 = new RationalNumber( ( this.numerator * other.denominator), (this.denominator * other.numerator));
     RationalNumber new2 = new RationalNumber( ( this.numerator * other.denominator), (this.denominator * other.numerator));
     RationalNumber diff = new RationalNumber( (new1.numerator - new2.numerator), new1.denominator);
-    diff.reduce();
     return diff;
   }
 

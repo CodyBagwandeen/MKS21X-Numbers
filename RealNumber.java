@@ -19,18 +19,18 @@ public class RealNumber {
   }
 
   public double add(RealNumber other){
-     return this.value + other.getValue();
+     return this.value + (double)other.getValue();
    }
 
    public double multiply(RealNumber other){
-    return this.value * other.getValue();
+    return this.value * (double)other.getValue();
   }
 
   public double divide(RealNumber other){
-   return this.value / other.getValue();
+   return this.value / (double)other.getValue();
  }
 
  public double subtract(RealNumber other){
-  return this.value - other.getValue();
+  return this.value - (double)other.getValue();
 }
 }
