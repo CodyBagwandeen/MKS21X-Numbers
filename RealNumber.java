@@ -2,8 +2,8 @@ public class RealNumber {
 
   private double value;
 
-  public RealNumber (double value ) {
-
+  public RealNumber (double val ) {
+    value = val;
   }
 
   public double getValue() {
