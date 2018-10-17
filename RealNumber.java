@@ -7,11 +7,11 @@ public class RealNumber {
   }
 
   public double getValue() {
-    return 10;
+    return this.value;
   }
 
   public void setValue( double newval) {
-
+    value = newval;
   }
 
   public String toString() {
